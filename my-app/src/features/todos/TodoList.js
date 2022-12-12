@@ -1,5 +1,6 @@
 import { useGetTodosQuery,  } from '../api/apiSlice'
 import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 
 const TodoList = () => {
