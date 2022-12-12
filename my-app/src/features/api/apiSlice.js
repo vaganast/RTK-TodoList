@@ -4,7 +4,7 @@ export const apiSlice = createApi({
     reducerPath: 'api', //default change if its different
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3500' }), //json server on local host 3500
     endpoints: (builder) => ({
-        getTodos: (builder) => ({
+        getTodos: builder.query ({
             query: () => '/todos', //  http get method /todos
         })
     })

@@ -1,4 +1,4 @@
-import { useGetTodosQuery, } from '../api/apiSlice'
+import { useGetTodosQuery,  } from '../api/apiSlice'
 import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
