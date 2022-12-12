@@ -1,8 +1,17 @@
+import { useGetTodosQuery, } from '../api/apiSlice'
 import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 const TodoList = () => {
     const [newTodo, setNewTodo] = useState('')
+
+    const {
+        data: todos, //destructure data to todos
+        isLoading,
+        isSuccess,
+        isError,
+        error
+    } = useGetTodosQuery()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,9 +32,16 @@ const TodoList = () => {
                 />
             </div>
         </form>
-
-    let content;
+        
     //define condition content
+    let content;
+    if (isLoading) {
+        content = <p>Loading . . .</p>
+    } else if (isSuccess) {
+        content = JSON.stringify(todos)
+    } else if (isError) {
+        content = <p>{error}</p>
+    }    
 
     return (
         <main>
